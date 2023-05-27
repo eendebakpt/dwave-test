@@ -1,0 +1,26 @@
+[build-system]
+requires = [
+    "setuptools >= 42",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.ruff]
+select = ["E", "F", "UP", "I"]
+ignore = [ "UP035", # Import block is un-sorted or un-formatted, SW teams prefers custom sorting
+           "UP038", # Use `X | Y` in `isinstance` call instead of `(X, Y)`, ignore for performance
+        ]
+line-length = 120
+target-version = "py310"
+
+
